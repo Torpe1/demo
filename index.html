@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey gorgeous</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .rectangle {
+            width: 600px;
+            height: 300px;
+            background-color: #ffcccb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+        .rectangle img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .rectangle span {
+            position: relative;
+            z-index: 1;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 15px;
+            background-color: #ff7f7f;
+            color: white;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #ff4f4f;
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <img src="download2.jpg" alt="Background Image">
+        <span>Hi pretty lady, I wanted to ask you something <3</span>
+    </div>
+    <div class="button-container">
+        <button onclick="openValentineWindow()">Tap Me</button>
+    </div>
+
+    <script>
+        function openValentineWindow() {
+            // Open the new window
+            const newWindow = window.open('', '', 'width=500,height=250');
+
+            // Set background image and other styles after the window is created
+            newWindow.document.body.style.backgroundImage = 'url("background.jpg")'; // Use your image here
+            newWindow.document.body.style.backgroundSize = 'cover';
+            newWindow.document.body.style.backgroundPosition = 'center';
+            newWindow.document.body.style.fontFamily = 'Times New Roman', 'Times', 'serif';
+            newWindow.document.body.style.display = 'flex';
+            newWindow.document.body.style.flexDirection = 'column';
+            newWindow.document.body.style.justifyContent = 'center';
+            newWindow.document.body.style.alignItems = 'center';
+            newWindow.document.body.style.margin = '0';
+
+            // Add the text
+            const text = newWindow.document.createElement('h1');
+            text.textContent = 'Will you be my valentine?';
+            text.style.color = '#fff';  // White text to contrast the background
+            text.style.textAlign = 'center';
+            newWindow.document.body.appendChild(text);
+
+            // Add the buttons
+            const buttonContainer = newWindow.document.createElement('div');
+            buttonContainer.style.marginTop = '20px';
+
+            const yesButton = newWindow.document.createElement('button');
+            yesButton.textContent = 'Yes';
+            yesButton.style.padding = '10px 20px';
+            yesButton.style.margin = '5px';
+            yesButton.style.border = 'none';
+            yesButton.style.borderRadius = '15px';
+            yesButton.style.backgroundColor = '#ff7f7f';
+            yesButton.style.color = 'white';
+            yesButton.style.cursor = 'pointer';
+            yesButton.onclick = function() {
+                newWindow.alert('Aww, i love you so muchhh!');
+                newWindow.close();
+            };
+
+            const ofCourseButton = newWindow.document.createElement('button');
+            ofCourseButton.textContent = 'Yes, hehe';
+            ofCourseButton.style.padding = '10px 20px';
+            ofCourseButton.style.margin = '5px';
+            ofCourseButton.style.border = 'none';
+            ofCourseButton.style.borderRadius = '15px';
+            ofCourseButton.style.backgroundColor = '#ff7f7f';
+            ofCourseButton.style.color = 'white';
+            ofCourseButton.style.cursor = 'pointer';
+            ofCourseButton.onclick = function() {
+                newWindow.alert('Aww, i love you so muchhh!');
+                newWindow.close();
+            };
+
+            buttonContainer.appendChild(yesButton);
+            buttonContainer.appendChild(ofCourseButton);
+            newWindow.document.body.appendChild(buttonContainer);
+        }
+    </script>
+</body>
+</html>
